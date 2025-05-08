@@ -1,7 +1,7 @@
 function exercicioExemplo(){
 
     let nota 
-    let cont = 0
+    let cont = 1
     let soma = 0
 
     while (cont <= 6){
@@ -17,16 +17,21 @@ function exercicioExemplo(){
 function pesquisaSatisfacao(){
 
     let nota 
-    let cont = 0
+    let cont = 1
     let sat = 0
     let insat = 0
     let soma = 0
 
-    while (cont < 10){
+    while (cont <= 10){
         nota = Number(prompt(`Informe a nota do aluno ${cont}: `))
         cont++
 
-        if (nota >= 8){
+        if (nota < 0 || nota > 10 || isNaN(nota)){
+            alert("Nota inválida!")
+            continue
+        }
+
+        else if (nota >= 8){
             sat++
             soma = soma + nota
         }
